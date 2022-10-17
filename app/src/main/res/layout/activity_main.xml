@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".view.MainActivity">
+    tools:context=".ui.view.MainActivity">
 
     <TextView
         android:id="@+id/tvQuote"
@@ -41,5 +41,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.929"
         tools:text="Hello World!" />
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="173dp"
+
+        android:visibility="gone"
+        android:layout_height="145dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvQuote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

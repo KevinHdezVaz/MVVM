@@ -1,11 +1,12 @@
-package com.example.mvvm.view
+package com.example.mvvm.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.example.mvvm.databinding.ActivityMainBinding
-import com.example.mvvm.viewmodel.QuoteViewModel
+ import com.example.mvvm.ui.viewmodel.QuoteViewModel
 
 class MainActivity : AppCompatActivity() {
     private  lateinit var binding: ActivityMainBinding
@@ -18,12 +19,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        quoteViewModel.onCreate()
+
         quoteViewModel.quoteModel.observe(this, Observer {
             binding.tvQuote.text = it.quote
             binding.tvAutor.text= it.author
         })
+        quoteViewModel.isloading.observe(this, Observer {
+            binding.progressCircular.isVisible = it
 
+        })
         binding.ViewContainer.setOnClickListener{
+
             quoteViewModel.randomQuote()
         }
     }
