@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mvvm.domain.GetRandomQuoteUseCase
-import com.example.mvvm.domain.getQuoteUseCase
+ import com.example.mvvm.domain.getQuotesUseCase
 import com.example.mvvm.domain.model.Quote
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class QuoteViewModel @Inject constructor(
-    private val getQuotesUseCase: getQuoteUseCase,
+    private val getQuotesUseCase: getQuotesUseCase,
     private val getRandomQuoteUseCase: GetRandomQuoteUseCase
 ) : ViewModel() {
 

@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 
 
-class getQuoteUseCase @Inject constructor(private val repository: QuoteRepository) {
+class getQuotesUseCase @Inject constructor(private val repository: QuoteRepository) {
     suspend operator fun invoke():List<Quote>{
         val quotes = repository.getAllQuotesFromApi()
 
